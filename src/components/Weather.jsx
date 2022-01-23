@@ -20,7 +20,7 @@ export default function Weather(props) {
                  }
             }
           if (inputSearch.length >= 3) {
-             fetch(`https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${props.APIKEY}&q=${inputSearch}`)
+             fetch(`http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${props.APIKEY}&q=${inputSearch}`)
              .then((result)=>{ return result.json() })
              .then((data)=>{
                      setLocations(data);
@@ -36,7 +36,7 @@ export default function Weather(props) {
     },[inputSearch])
 
     useEffect(()=>{
-        fetch(`https://dataservice.accuweather.com/currentconditions/v1/${props.cityYouChoose[0].Key}?apikey=${props.APIKEY}`)
+        fetch(`http://dataservice.accuweather.com/currentconditions/v1/${props.cityYouChoose[0].Key}?apikey=${props.APIKEY}`)
         .then((result)=>{ return result.json() })
         .then((data)=>{
              setCityTemperatur(data)
