@@ -16,7 +16,7 @@ export default function Showeather(props) {
     )
    
     useEffect(()=>{
-        fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${props.cityYouChoose[0].Key}?apikey=${props.APIKEY}&metric=true`)
+        fetch(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${props.cityYouChoose[0].Key}?apikey=${props.APIKEY}&metric=true`)
         .then((result)=>{ return result.json() })
         .then((data)=>{
         setDailyWeather(data);
