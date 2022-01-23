@@ -100,7 +100,8 @@ function App() {
         />
         <Routes>
           <Route
-            path="/"
+            path="/WeatherProject" 
+
             element={
               <Weather
               setIsCityInFavorites={setIsCityInFavorites}
