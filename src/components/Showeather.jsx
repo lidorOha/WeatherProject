@@ -16,7 +16,7 @@ export default function Showeather(props) {
     )
    
     useEffect(()=>{
-        fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${props.cityYouChoose[0].Key}?apikey=${props.APIKEY}&metric=true`)
+        fetch(`https://lidoroha.github.io/WeatherProject/http://dataservice.accuweather.com/forecasts/v1/daily/5day/${props.cityYouChoose[0].Key}?apikey=${props.APIKEY}&metric=true`)
         .then((result)=>{ return result.json() })
         .then((data)=>{
         setDailyWeather(data);
@@ -38,20 +38,23 @@ export default function Showeather(props) {
 
     return (
         <div id="showeathr">
-            <div style={{display:"flex",width:"100%",height:"30%",zIndex:"0"}}>
-                <div style={{width:"100%",height:"60%",display:"flex",paddingLeft:"2%",paddingTop:"2%"}}>
-                    <div style={{width:"16%",height:"100%",border:"black",borderStyle:"solid"}}>
+            {/* style={{display:"flex",width:"100%",height:"30%",zIndex:"0"}} */}
+            <div id='topshoweathercontainer'>
+            {/* style={{width:"100%",height:"60%",display:"flex",paddingLeft:"2%",paddingTop:"2%"}} */}
+                <div id='topleft' >
+                    <div style={{width:"100px",height:"125px",border:"black",borderStyle:"solid"}}>
                         <img src="https://i.dlpng.com/static/png/1261715-x-shape-png-high-quality-image-x-png-1600_1600_preview.png" alt="X" style={{width:"90%",height:"90%"}}/>
                     </div>
-                    <div style={{width:"20%",fontWeight:"bold",fontSize:"large",paddingTop:"2%",paddingLeft:"2%",textAlign:"left"}}>
+                    <div style={{width:"100px",fontWeight:"bold",fontSize:"large",paddingTop:"2%",paddingLeft:"2%",textAlign:"left"}}>
                           <SimpleDetails cityYouChoose={props.cityYouChoose} cityTemperatur={props.cityTemperatur}/>
                     </div>
                </div>
-                <div style={{width:"100%",height:"60%",paddingTop:"2%",paddingRight:"2%",textAlign:"right",display:"flex",flexDirection:"row",justifyContent:"right"}}>
+               {/* style={{width:"100%",height:"60%",paddingTop:"2%",paddingRight:"2%",textAlign:"right",display:"flex",flexDirection:"row",justifyContent:"right"}} */}
+                <div id='topright'>
                     <div style={{width:"10%",height:"100%",fontSize:"xx-large" ,marginRight:"2%"}}>
                         {fillHeart()}
                     </div>
-                    <div style={{width:"40%",height:"100%"}}>
+                    <div style={{width:"220px",height:"100%"}}>
                         <button id="myfavoritesbtn"  onClick={()=>{
                             props.addToFavorites(props.cityYouChoose,props.cityTemperatur)
                         }}>{props.favoriteTitle}</button>
@@ -61,7 +64,8 @@ export default function Showeather(props) {
             <div style={{width:"100%", height:"20%",display:"flex",alignItems:"center",justifyContent:"center"}}>
                <h1 style={{fontSize:'50px',fontFamily:"Comic Sans MS"}}>{props.cityTemperatur[0].WeatherText}</h1>
             </div>
-            <div  style={{height:"50%",justifyContent:"center",flexDirection:"row",display:"flex",alignItems:"center",fontFamily:"Comic Sans MS"}}>
+            {/* style={{height:"50%",justifyContent:"center",flexDirection:"row",display:"flex",alignItems:"center",fontFamily:"Comic Sans MS"}} */}
+            <div id='cardcontainer' >
                  {dailyWeather.DailyForecasts.map((day,i)=>{
                         return <Showcards cityTemperatur={props.cityTemperatur} key={`${i}`} day={day} i={i}/>
                  })}

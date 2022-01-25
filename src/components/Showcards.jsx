@@ -19,13 +19,15 @@ export default function Showcards(props) {
 
 
     return (
-        <div style={{backgroundColor:"white",width:"100%",height:"100%",display:"flex",justifyContent:"center"}}>
-            <div style={{width:"50%",height:"60%",display:"flex",alignSelf:"center"}}>
+        // style={{backgroundColor:"white",width:"100%",height:"100%",display:"flex",justifyContent:"center"}}
+        <div id="cards" >
+            {/* style={{width:"50%",height:"60%",display:"flex",alignSelf:"center"}} */}
+            <div id="card">
                 <div style={{borderWidth: "3px",border:"black",borderStyle:"groove",width:"96%",height:"97%"}}>
-                    <div style={{width:"100%",height:"50%",display:"flex",justifyContent:"center",alignItems:"center",fontSize:"1.4vw"}}>
+                    <div style={{width:"100%",height:"50%",display:"flex",justifyContent:"center",alignItems:"center"}}>
                     {showDay()}
                     </div>
-                    <div style={{width:"100%",height:"50%",display:"flex",justifyContent:"center",fontSize:"1.4vw"}}>
+                    <div style={{width:"100%",height:"50%",display:"flex",justifyContent:"center"}}>
                     {computAvg()}°c
                     </div>
                 </div>

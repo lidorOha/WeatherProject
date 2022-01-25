@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 export default function ShowFavorites(props) {
 
-
-  return <div style={{width:"13%",height:"27%",display:"flex",justifyContent:"center",alignItems:"center",fontSize:"1vw"}}>
-             <div style={{borderWidth: "3px",border:"black",borderStyle:"groove",width:"60%",height:"70%",display:"flex",justifyContent:"center",fontWeight:"bold",flexDirection:"column",paddingTop:"5%"}}>
+       // style={{width:"13%",height:"27%",display:"flex",justifyContent:"center",alignItems:"center",fontSize:"1vw"}}
+  return <div id='favoritecard' >
+             <div  style={{borderWidth: "3px",border:"black",borderStyle:"groove",width:"60%",height:"70%",display:"flex",justifyContent:"center",fontWeight:"bold",flexDirection:"column",paddingTop:"5%"}}>
                 <Link to="/WeatherProject" onClick={()=>{props.setMyFavorite(props.element)}} style={{width:"100%",height:"100%",textDecoration:"none",color:"black"}}>
                       <div style={{width:"100%",height:"40%",textAlign:"center"}}>
                             {props.element.City}

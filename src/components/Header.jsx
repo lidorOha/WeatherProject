@@ -29,8 +29,8 @@ const checkFavoriteClick = ()=>{
                 <p>Weather details</p>
             </div>
             <div id='btn'>
-                <Link to='/WeatherProject'><button onClick={()=>{chooseHome()}} style={{backgroundColor:`${backgroundColorHome}`,width:"20%",fontSize:"1.5vw"}}>Home</button></Link>
-                <Link to='/favorites'><button onClick={()=>{chooseFavorite()}} style={{backgroundColor:`${backgroundColorFavorite}`,width:"20%",fontSize:"1.5vw"}}>Favorites</button></Link>
+                <Link to='/WeatherProject'><button onClick={()=>{chooseHome()}} style={{backgroundColor:`${backgroundColorHome}`,fontSize:"large"}}>Home</button></Link>
+                <Link to='/favorites'><button onClick={()=>{chooseFavorite()}} style={{backgroundColor:`${backgroundColorFavorite}`,fontSize:"large"}}>Favorites</button></Link>
             </div>
         </div>
     )

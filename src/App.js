@@ -24,12 +24,12 @@ function App() {
 
   useEffect(() => {
     function handleResize() {
-      if(window.innerHeight > 500){
+      // if(window.innerHeight > 500 ){
         setheight(window.innerHeight);
-      }
-      if(window.innerWidth > 700){
+      // }
+      // if(window.innerWidth > 700){
       setwidth(window.innerWidth);}
-    }
+    // }
     window.addEventListener("resize", handleResize);
   }, []);
 
